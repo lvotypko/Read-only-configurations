@@ -28,11 +28,5 @@
             <url>http://maven.glassfish.org/content/groups/public/</url>
         </pluginRepository>
     </pluginRepositories>
-    <dependencies>
-        <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>1.6.1</version>
-        </dependency>
-    </dependencies>
+
 </project>
