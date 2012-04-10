@@ -48,12 +48,10 @@ public class JobConfiguration implements ProminentProjectAction {
     }
     
     /**
-    * Do a transformation of html code which modify all formular's items read-only
+    * Transformation of html code which modify all formular's items to read-only
     * 
-    * @return return true if all is ok
     */
-    @JavaScriptMethod
-    public boolean transformToReadOnly() throws IOException, JellyException, SAXException, ParserConfigurationException, TransformerConfigurationException, TransformerException {
+    public void transformToReadOnly() throws IOException, JellyException, SAXException, ParserConfigurationException, TransformerConfigurationException, TransformerException {
             DefaultScriptInvoker invoker = new DefaultScriptInvoker();
             StaplerRequest request = Stapler.getCurrentRequest();
             StaplerResponse response = Stapler.getCurrentResponse();
@@ -66,7 +64,6 @@ public class JobConfiguration implements ProminentProjectAction {
             String charset = Charset.defaultCharset().name();
             String page = ReadOnlyUtil.transformInputsToReadOnly(out.toString(charset));          
             response.getOutputStream().write(page.getBytes());
-            return true;
     }
     
 }
